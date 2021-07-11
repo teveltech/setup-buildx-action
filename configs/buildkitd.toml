@@ -1,0 +1,21 @@
+debug = true
+# root is where all buildkit state is stored.
+root = "/var/lib/buildkit"
+# insecure-entitlements allows insecure entitlements, disabled by default.
+insecure-entitlements = [ "network.host", "security.insecure" ]
+
+# registry configures a new Docker register used for cache import or output.
+[registry."docker.io"]
+  mirrors = ["hub.docker.io"]
+  https = true
+  insecure = false
+
+[registry."jfrog.local:8081"]
+  mirrors = ["10.10.20.211:8081"]
+  http = true
+  insecure = true
+  
+[registry."artifactory.local:8081"]
+  mirrors = ["10.10.20.188:8081"]
+  http = true
+  insecure = true
