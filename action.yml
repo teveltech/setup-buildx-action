@@ -34,6 +34,7 @@ inputs:
     required: false
   config:
     description: 'BuildKit config file'
+    default: ${{ github.action_path }}/configs/buildkitd.toml
     required: false
 
 outputs:
